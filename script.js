@@ -16,15 +16,15 @@ form.addEventListener("submit", function (event) {
 
 
 
-// Simulate an error message
-setTimeout(() => {
-  successMessage.style.display = "none";
-  errorMessage.style.display = "block";
-}, 2000);
-// Simulate a successful form submission
-setTimeout(() => {
-  form.reset();
-  successMessage.style.display = "block";
-  errorMessage.style.display = "none";
-}, 1000);
+// // Simulate an error message
+// setTimeout(() => {
+//   successMessage.style.display = "none";
+//   errorMessage.style.display = "block";
+// }, 2000);
+// // Simulate a successful form submission
+// setTimeout(() => {
+//   form.reset();
+//   successMessage.style.display = "block";
+//   errorMessage.style.display = "none";
+// }, 1000);
 
