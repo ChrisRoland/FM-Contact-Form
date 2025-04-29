@@ -16,9 +16,9 @@ form.addEventListener("submit", function (event) {
 });
 
 // Simulate an error message
-setTimeout(() => {
-  successMessage.style.display = "none";
-  errorMessage.style.display = "block";
-}, 2000);
+// setTimeout(() => {
+//   successMessage.style.display = "none";
+//   errorMessage.style.display = "block";
+// }, 2000);
 
 
