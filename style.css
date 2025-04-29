@@ -16,6 +16,10 @@ body {
   background-color: #dff1e7;
 }
 
+main {
+    position: relative;
+}
+
 .container {
   background-color: #fff;
   width: 500px;
@@ -84,12 +88,22 @@ h1 {
   font-family: inherit;
   transition: 0.3s ease;
 }
+
 .form-group-message textarea:focus {
   border-color: #0c7d69;
   outline: none;
 }
+
 .form-group-message textarea:hover {
   border-color: #0c7d69;
+}
+
+.form-group-consent {
+  display: flex;
+  width: 100%;
+  margin: 20px 0;
+  gap: 10px;
+    align-items: center;
 }
 
 label {
@@ -162,7 +176,29 @@ input[type="checkbox"] + label {
 
 .success-message {
   display: none;
+  position: absolute;
+    width: 300px;
+    top: 0rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  background-color: #000;
+  padding: 20px;
+  color: #fff;
+  border-radius: 10px;
 }
+
+.success-message h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.success-message p {
+  font-size: 14px;
+}
+
 .error-message {
   display: none;
 }
