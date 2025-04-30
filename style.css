@@ -64,13 +64,29 @@ h1 {
   width: 100%;
   border: #0c7d69 1px solid;
   border-radius: 5px;
-  padding: 10px;
+  padding: 12px;
   display: flex;
   align-items: center;
+    gap: 10px;
 }
 
-.form-radio input {
-  margin-right: 6px;
+.form-radio input + label {
+    margin: 0;
+}
+
+.form-radio:has(input[type="radio"]:checked) {
+    background:#dff1e7;
+}
+
+input[type="radio"]:checked {
+    appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  background-image: url("assets/images/icon-radio-selected.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15px 15px;
+  border: none;
 }
 
 .form-group-message {
@@ -133,8 +149,8 @@ input:hover {
 }
 
 input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 
 input[type="checkbox"] + label {
@@ -148,11 +164,13 @@ input[type="checkbox"]:checked {
   background-image: url("assets/images/icon-checkbox-check.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 15px 15px;
+  border: none;
 }
 
 input[type="checkbox"] + label {
   cursor: pointer;
+  margin: 0;
 }
 
 .submit-button {
@@ -162,13 +180,14 @@ input[type="checkbox"] + label {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   transition: 0.3s ease;
 }
 .submit-button:hover {
   background-color: #0a5b4f;
 }
+
 .submit-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
