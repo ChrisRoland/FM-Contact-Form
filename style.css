@@ -178,6 +178,11 @@ input[type="checkbox"] + label {
   margin: 0;
 }
 
+small {
+  color: red;
+  display: none;
+}
+
 .submit-button {
   background-color: #0c7d69;
   color: #fff;
