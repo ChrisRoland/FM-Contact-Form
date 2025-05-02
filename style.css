@@ -234,6 +234,8 @@ small {
 }
 
 .attribution {
+    position: absolute;
+    bottom: 1rem;
   font-size: 11px;
   text-align: center;
 }
