@@ -1,46 +1,29 @@
-// const form = document.getElementById("form");
-// const successMessage = document.getElementById("success-message");
-// const errorMessage = document.getElementById("error-message");
-// const submitButton = document.getElementById("submit-button");
+const form = document.getElementById("form");
+const successMessage = document.getElementById("success-message");
+const errorMessage = document.getElementById("error-message");
 
-// form.addEventListener("submit", function (event) {
-//   event.preventDefault();
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-//   // Simulate a successful form submission
-//   setTimeout(() => {
-//     form.reset();
-//     successMessage.style.display = "block";
-//     errorMessage.style.display = "none";
-//   }, 1000);
+  if (form) {
+    const formData = new FormData(form);
+    const formDataObject = Object.fromEntries(formData.entries());
+    console.log(formDataObject);
+  } else {
+    console.error('Form not found!');
+  }
 
-// });
-
-// // Simulate an error message
-// // setTimeout(() => {
-// //   successMessage.style.display = "none";
-// //   errorMessage.style.display = "block";
-// // }, 2000);
-
-
-  // JavaScript code to handle form submission and success/error messages
-  const form = document.getElementById('form');
-  const successMessage = document.getElementById('success-message');
-  const errorMessage = document.getElementById('error-message');
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    // Simulate a successful form submission
-    setTimeout(() => {
-      form.reset();
-      successMessage.style.display = 'block';
-      errorMessage.style.display = 'none';
-    }, 1000);
-  });
-  // Hide success message after 3 seconds
+  // Simulate a successful form submission
   setTimeout(() => {
-    successMessage.style.display = 'none';
-  }, 3000);
+    form.reset();
+    successMessage.style.display = "block";
+    errorMessage.style.display = "none";
+  }, 1000);
+});
+// Hide success message after 3 seconds
+setTimeout(() => {
+  successMessage.style.display = "none";
+}, 3000);
 
 //   //handle form validation error state
 //   const inputs = form.querySelectorAll('input, textarea');
@@ -76,24 +59,38 @@
 //       errorMessage.style.display = 'block';
 //     }
 //   });
-  //handle textarea validation
-  const textarea = form.querySelector('textarea');
-  textarea.addEventListener('input', function () {
+//handle textarea validation
+const textarea = form.querySelector("textarea");
+textarea.addEventListener("input", function () {
+  if (this.validity.valid) {
+    this.classList.remove("error");
+    this.nextElementSibling.style.display = "none";
+  } else {
+    this.classList.add("error");
+    this.nextElementSibling.style.display = "block";
+  }
+});
+
+//Prevent default form validation error message
+const inputs = form.querySelectorAll(
+  'input[type="text"], input[type="email"], input[type="password"]'
+);
+inputs.forEach((input) => {
+  input.addEventListener("input", function () {
     if (this.validity.valid) {
-      this.classList.remove('error');
-      this.nextElementSibling.style.display = 'none';
+      this.classList.remove("error");
+      this.nextElementSibling.style.display = "none";
     } else {
-      this.classList.add('error');
-      this.nextElementSibling.style.display = 'block';
+      this.classList.add("error");
+      this.nextElementSibling.style.display = "block";
     }
   });
-
-  //Prevent default form validation error message
-  const preventDefaultValidation = (event) => {
-    event.preventDefault();
-    const errorMessage = event.target.nextElementSibling;
-    errorMessage.style.display = 'block';
-  };
-  inputs.forEach((input) => {
-    input.addEventListener('invalid', preventDefaultValidation);
-  });
+});
+const preventDefaultValidation = (event) => {
+  event.preventDefault();
+  const errorMessage = event.target.nextElementSibling;
+  errorMessage.style.display = "block";
+};
+inputs.forEach((input) => {
+  input.addEventListener("invalid", preventDefaultValidation);
+});

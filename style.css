@@ -7,6 +7,7 @@
 }
 
 body {
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -108,8 +109,7 @@ input[type="radio"]:checked {
 }
 
 .form-group-message textarea:focus {
-  border-color: #0c7d69;
-  outline: none;
+  outline: 1px solid #0c7d69;
 }
 
 .form-group-message textarea:hover {
@@ -157,6 +157,10 @@ input[type="checkbox"] {
   width: 15px;
   height: 15px;
 }
+input[type="checkbox"]:focus {
+  border: 1px solid #0c7d69;
+  background-color: #dff1e7;
+}
 
 input[type="checkbox"] + label {
   font-size: 14px;
@@ -195,6 +199,15 @@ small {
   cursor: pointer;
   transition: 0.3s ease;
 }
+
+.submit-button:hover {
+  background-color: #0a5b4f;
+}
+
+.submit-button:focus {
+  transform: scale(1.02);
+  outline: none;
+}
 .submit-button:hover {
   background-color: #0a5b4f;
 }
@@ -207,11 +220,11 @@ small {
 .success-message {
   display: none;
   position: absolute;
-  width: 300px;
-  top: 0rem;
+  width: 350px;
+  top: -2.2rem;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #000;
+  background-color: #2b4246;
   padding: 20px;
   color: #fff;
   border-radius: 10px;
@@ -221,12 +234,12 @@ small {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 
 .success-message p {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .error-message {
