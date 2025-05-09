@@ -18,12 +18,13 @@ form.addEventListener("submit", function (event) {
     form.reset();
     successMessage.style.display = "block";
     errorMessage.style.display = "none";
+
+    // Hide success message after 3 seconds
+    setTimeout(() => {
+      successMessage.style.display = "none";
+    }, 3000);
   }, 1000);
 });
-// Hide success message after 3 seconds
-setTimeout(() => {
-  successMessage.style.display = "none";
-}, 3000);
 
 //handle textarea validation
 const textarea = form.querySelector("textarea");
