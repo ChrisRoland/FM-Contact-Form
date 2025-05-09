@@ -5,21 +5,11 @@ const errorMessage = document.getElementById("error-message");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  // if (form) {
-  //   const formData = new FormData(form);
-  //   const formDataObject = Object.fromEntries(formData.entries());
-  //   console.log(formDataObject);
-  // } else {
-  //   console.error('Form not found!');
-  // }
-
-  // Simulate a successful form submission
   setTimeout(() => {
     form.reset();
     successMessage.style.display = "block";
     errorMessage.style.display = "none";
 
-    // Hide success message after 3 seconds
     setTimeout(() => {
       successMessage.style.display = "none";
     }, 3000);
